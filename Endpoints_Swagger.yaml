@@ -1,0 +1,126 @@
+openapi: 3.0.1
+info:
+  title: API proyecto REST.
+  description: Esta API se encarga de manejar información sobre los proyectos y blogs de la empresa.
+  version: 1.0.0
+
+paths:
+
+  /Project:
+    get:
+      summary: Crear lista Proyectos
+      description: Este método crea una lista de todos los Proyectos
+      responses:
+        200:
+          description: Creacion correcta
+          content:
+            application/json:
+    
+    post:
+      summary: Crear Proyecto
+      description: Este método crea un proyecto
+      responses:
+        200:
+          description: Creacion correcta
+          content:
+            application/json:
+      requestBody:
+        content:
+          application/json:
+
+  /Project/Code:
+    get:
+      summary: Crear lista Codigos
+      description: Este método crea una lista de todos los Codigos
+      responses:
+        200:
+          description: Creacion correcta
+          content:
+            application/json:
+    
+    post:
+      summary: Crear Codigo
+      description: Este método crea un codigo
+      responses:
+        200:
+          description: Creacion correcta
+          content:
+            application/json:
+      requestBody:
+        content:
+          application/json:
+
+  /Project/User:
+    get:
+      summary: Crear lista Usuarios
+      description: Este método crea una lista de todos los Usuarios
+      responses:
+        200:
+          description: Creacion correcta
+          content:
+            application/json:
+    
+    post:
+      summary: Crear Usuario
+      description: Este método crea un usuario
+      responses:
+        200:
+          description: Creacion correcta
+          content:
+            application/json:
+      requestBody:
+        content:
+          application/json:
+    delete:
+      summary: Borrar Usuario
+      description: Este método borra un usuario
+      responses:
+        200:
+          description: Borrado correcto
+          content:
+            application/json:
+
+components:
+  schemas:    
+    Project:
+      type: object
+      required: 
+        - id
+        - description
+        - language
+        - open
+      properties:
+        id:
+          type: integer
+        description:
+          type: string
+        language:
+          type: string
+        open:
+          type: string
+    Code:
+      type: object
+      required:
+        - id
+        - package
+        - file
+      properties:
+        id:
+          type: integer
+        package:
+          type: string
+        file:
+          type: string
+    User:
+      type: object
+      required:
+        - id
+        - nick
+        - name
+      properties:
+        id:
+          type: integer
+        nick:
+          type: string
+        name:
+          type: string
